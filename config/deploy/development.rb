@@ -22,7 +22,7 @@ before 'after:update_code' do
   run "ln -s #{shared_path}/system/ #{release_path}/public/" 
   # run "ln -s '/var/www/blog' #{release_path}/public/" 
   run "ln -s #{shared_path}/uploads  #{release_path}/public/"
-  run "cd #{release_path} && gem update bundler"
+  # run "cd #{release_path} && gem update bundler"
   run "cd #{release_path} && bundle install"
   # run "cd #{release_path} && rake db:drop"
   # run "cd #{release_path} && rake db:create"
