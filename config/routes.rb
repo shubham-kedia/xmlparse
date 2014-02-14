@@ -1,6 +1,9 @@
 Xmltask::Application.routes.draw do
+  devise_for :admin
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  
   resources :categories 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
