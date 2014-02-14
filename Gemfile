@@ -39,7 +39,7 @@ gem 'capistrano', '~> 2.15.5'
 gem 'rvm-capistrano'
 
 #Minitest
-gem 'minitest'
+gem 'minitest', '4.7.5'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

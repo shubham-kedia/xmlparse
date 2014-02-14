@@ -162,7 +162,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
-  minitest
+  minitest (= 4.7.5)
   mysql2
   rails (= 4.0.2)
   rails_admin (~> 0.6.1)
