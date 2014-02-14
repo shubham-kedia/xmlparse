@@ -1,0 +1,39 @@
+<skimlinksProductAPI>
+    <message>OK</message>
+    <version>3</version>
+    <status>200</status>
+    <categories>
+        <category>
+            <id>1</id>
+            <name>Animals</name>
+        </category>
+        <category>
+            <id>2</id>
+            <name>Animals &gt; Live Animals</name>
+        </category>
+        <category>
+            <id>3</id>
+            <name>Animals &gt; Pet Supplies</name>
+        </category>
+        <category>
+            <id>4</id>
+            <name>Animals &gt; Pet Supplies &gt; Bird Supplies</name>
+        </category>
+        <category>
+            <id>5</id>
+            <name>Animals &gt; Pet Supplies &gt; Bird Supplies &gt; Bird Cages &amp; Stands</name>
+        </category>
+        <category>
+            <id>6</id>
+            <name>Animals &gt; Pet Supplies &gt; Bird Supplies &gt; Bird Food</name>
+        </category>
+        <category>
+            <id>7</id>
+            <name>Animals &gt; Pet Supplies &gt; Bird Supplies &gt; Bird Ladders &amp; Perches</name>
+        </category>
+        <category>
+            <id>8</id>
+            <name>Animals &gt; Pet Supplies &gt; Bird Supplies &gt; Bird Toys</name>
+        </category>
+    </categories>
+</skimlinksProductAPI>
