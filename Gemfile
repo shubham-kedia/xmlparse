@@ -33,6 +33,11 @@ gem 'rails_admin','~> 0.6.1'
 
 gem 'rufus-scheduler'
 
+# Use Capistrano for deployment
+# gem 'capistrano', group: :development
+gem 'capistrano', '~> 2.15.5'
+gem 'rvm-capistrano'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
