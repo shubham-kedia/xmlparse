@@ -40,7 +40,7 @@ namespace :deploy do
   end
 end
 
-require "capistrano"
+require "rvm/capistrano"
 require "bundler/capistrano"
 require 'capistrano/ext/multistage'
 
