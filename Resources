@@ -5,6 +5,9 @@ http://dougmcinnes.com/2008/07/14/craken/
 http://backgroundrb.rubyforge.org/
 http://stackoverflow.com/questions/285717/a-cron-job-for-rails-best-practices
 
+for deployment
+http://robmclarty.com/blog/how-to-deploy-a-rails-4-app-with-git-and-capistrano
+
 def new
 		scheduler = Rufus::Scheduler.new
 		scheduler.every '1h' do
@@ -21,3 +24,5 @@ def new
 			render :text => "OK!!Done"
 		end
 	end
+
+
