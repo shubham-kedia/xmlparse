@@ -35,6 +35,8 @@ gem 'nokogiri'
 
 gem 'devise'
 
+gem 'capistrano','2.15.5',group: :development
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
