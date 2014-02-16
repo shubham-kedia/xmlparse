@@ -17,6 +17,7 @@ def new
 			categories = doc.search("//category")
 			categories.each do |category|
 				c = Category.new(:id => category.xpath("//id"), :name => category.at('name').text)
+				# puts category.at('id').content
 				c.save
 			end
 		
