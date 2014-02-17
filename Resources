@@ -31,3 +31,4 @@ def new
 	end
 
 	ssh root@162.243.252.62
+	ssh root@162.243.252.62
