@@ -31,4 +31,7 @@ def new
 	end
 
 	ssh root@162.243.252.62
-	ssh root@162.243.252.62
+	Current directory :  ln -s /var/www/phpmyadmin ./public/phpmyadmin 
+	Current directory :  chmod -R 777 ./tmp/
+	than  
+	as
