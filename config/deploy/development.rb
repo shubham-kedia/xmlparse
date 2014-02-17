@@ -32,8 +32,7 @@ after 'deploy:update_code' do
   # run "cd #{release_path} && RAILS_ENV=production rake assets:precompile"
   # run "chown -R www-data:www-data #{release_path}/*"
   run "chmod -R 777 #{release_path}/log"
-  run "ln -s /var/www/phpmyadmin ./public/phpmyadmin #{current_path}"
-  run "as #{current_path}"
+  
 end
 
 namespace :deploy do
