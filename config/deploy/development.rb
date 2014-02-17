@@ -31,8 +31,8 @@ after 'deploy:update_code' do
   # run "cd #{release_path} && rake db:seed"
   # run "cd #{release_path} && RAILS_ENV=production rake assets:precompile"
   # run "chown -R www-data:www-data #{release_path}/*"
-  run "chmod -R 777 #{release_path}/log"
-  
+  run "chmod -R 777 #{current_path}/log"
+
 end
 
 namespace :deploy do
