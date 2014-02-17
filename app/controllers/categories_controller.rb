@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
 	
 	def show
 		scheduler = Rufus::Scheduler.new
-		scheduler.every '5m' do
+		scheduler.every '2h' do
 			doc = Nokogiri::XML(open("http://api-product.skimlinks.com/categories?key=8bf53d38d24f389b6d35ef4014a48dad&format=xml"))
 			categories = doc.search("//category")
 			categories.each do |category|
