@@ -8,26 +8,35 @@ class CategoriesController < ApplicationController
 	
 	def show
 		scheduler = Rufus::Scheduler.new
-		scheduler.every '1h' do
+		scheduler.every '40s' do
 			doc = Nokogiri::XML(open("http://api-product.skimlinks.com/categories?key=8bf53d38d24f389b6d35ef4014a48dad&format=xml"))
 			categories = doc.search("//category")
 			categories.each do |category|
-				c = Category.new(:name => category.at('name').text)
-				c.save
+				if @c=Category.find_by_category_id(category.at('id').content)
+					@c.update_attribute(:name,category.at('name').text)
+				else
+					c = Category.new(:provider_name => "skimlinks",:category_id => category.at('id').content,:name => category.at('name').text)
+					# puts category.at('id').content
+					c.save
+				end
 			end
-			
-			
 		end
 	end
 
 	def new
 			doc = Nokogiri::XML(open("http://api-product.skimlinks.com/categories?key=8bf53d38d24f389b6d35ef4014a48dad&format=xml"))
+			# puts doc.root
 			categories = doc.search("//category")
 			categories.each do |category|
-				c = Category.new(:name => category.at('name').text)
-				# puts category.at('id').content
-				c.save
+				if @c=Category.find_by_category_id(category.at('id').content)
+					@c.update_attribute(:name,category.at('name').text)
+				else
+					c = Category.new(:provider_name => "skimlinks",:category_id => category.at('id').content,:name => category.at('name').text)
+					# puts category.at('id').content
+					c.save
+				end
 			end
 			render :text => "XML Data Insertion Done"
+			f.close
 	end
 end
