@@ -24,11 +24,12 @@ class CategoriesController < ApplicationController
 	end
 
 	def new
-			doc = Nokogiri::XML(open("http://api-product.skimlinks.com/categories?key=8bf53d38d24f389b6d35ef4014a48dad&format=xml"))
+			f = File.open("/home/sk/Documents/xmltask/category.xml")
+			doc = Nokogiri::XML(f)
 			# puts doc.root
 			categories = doc.search("//category")
 			categories.each do |category|
-				if @c=Category.find_by_category_id(category.at('id').content)
+				if @c=Category.where("category_id = ? and provider_name = ?",category.at('id').content ,"skimlinks").first
 					@c.update_attribute(:name,category.at('name').text)
 				else
 					c = Category.new(:provider_name => "skimlinks",:category_id => category.at('id').content,:name => category.at('name').text)
