@@ -24,8 +24,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def new
-			f = File.open("/home/sk/Documents/xmltask/category.xml")
-			doc = Nokogiri::XML(f)
+			doc = Nokogiri::XML(open("http://api-product.skimlinks.com/categories?key=8bf53d38d24f389b6d35ef4014a48dad&format=xml"))
 			# puts doc.root
 			categories = doc.search("//category")
 			categories.each do |category|
@@ -38,6 +37,5 @@ class CategoriesController < ApplicationController
 				end
 			end
 			render :text => "XML Data Insertion Done"
-			f.close
 	end
 end
