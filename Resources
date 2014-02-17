@@ -13,12 +13,15 @@ def new
 		scheduler.every '1h' do
 		# f = File.open("/home/sk/Documents/xmltask/category.xml")
 			# doc = Nokogiri::XML(f)
-			doc = Nokogiri::XML(open("http://api-product.skimlinks.com/categories?key=8bf53d38d24f389b6d35ef4014a48dad&format=xml"))
-			categories = doc.search("//category")
+			doc = Nokogiri::XML(open("http://api-product.skimlinks.com/categories = doc.search("//category")
 			categories.each do |category|
-				c = Category.new(:id => category.xpath("//id"), :name => category.at('name').text)
-				# puts category.at('id').content
-				c.save
+				if @c=Category.find_by_category_id(category.at('id').content)
+					@c.update_attribute(:name,category.at('name').text)
+				else
+					c = Category.new(:provider_name => "skimlinks",:category_id => category.at('id').content,:name => category.at('name').text)
+					# puts category.at('id').content
+					c.save
+				end
 			end
 		
 		# f.close
@@ -26,4 +29,4 @@ def new
 		end
 	end
 
-
+	ssh root@162.243.252.62
