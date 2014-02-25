@@ -8,11 +8,12 @@ class CategoriesController < ApplicationController
 	
 	def show
 		scheduler = Rufus::Scheduler.new
-		scheduler.every '2m' do
+		scheduler.every '2h' do
 			doc = Nokogiri::XML(open("http://api-product.skimlinks.com/categories?key=8bf53d38d24f389b6d35ef4014a48dad&format=xml"))
 			# doc = Nokogiri::XML(File.open("/home/sk/Documents/xmltask/category.xml"))
 			@count = 0
 			categories = doc.search("//category")
+			Category.touch
 			categories.each do |category|
 				@c= Category.find_or_initialize_by_category_id_and_provider_name(category.at('id').content,"skimlinks")
 				if @c.name.present? && @c.name !=category.at('name').text
