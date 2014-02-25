@@ -33,7 +33,10 @@
         </category>
         <category>
             <id>8</id>
-            <name>Animals &gt; Pet Smhbjmupplies &gt; Bird Supplies &gt; Bird Toys</name>
+            <name>Animals &gt; Pet Supplies &gt; Bird Supplies &gt; Bird Toys</name>
+        </category><category>
+            <id>81</id>
+            <name>Animals &gt; Pet Supplhygies &gt; Bird Supplies &gt; Bird Toys</name>
         </category>
     </categories>
 </skimlinksProductAPI>

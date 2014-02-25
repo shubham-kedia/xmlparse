@@ -11,8 +11,7 @@ http://robmclarty.com/blog/how-to-deploy-a-rails-4-app-with-git-and-capistrano
 def new
 		scheduler = Rufus::Scheduler.new
 		scheduler.every '1h' do
-		# f = File.open("/home/sk/Documents/xmltask/category.xml")
-			# doc = Nokogiri::XML(f)
+		# doc = Nokogiri::XML(File.open("/home/sk/Documents/xmltask/category.xml"))
 			doc = Nokogiri::XML(open("http://api-product.skimlinks.com/categories?key=8bf53d38d24f389b6d35ef4014a48dad&format=xml"))
 			categories = doc.search("//category")
 			categories.each do |category|
@@ -29,6 +28,19 @@ def new
 			render :text => "OK!!Done"
 		end
 	end
+
+				# if !@c.count
+				# 		@c = Category.new(:provider_name => "skimlinks",:category_id => category.at('id').content,:name => category.at('name').text)
+				# 		# puts category.at('id').content
+				# 		@c.save
+				# else 
+				# 	@c=@c.first
+				# 	if @c.name != category.at('name').text
+				# 	 @c.update_attribute(:name,category.at('name').text)
+				# 	 @count = @count+1
+				# 	# @c=Category.where("category_id = ? and provider_name = ?",category.at('id').content ,"skimlinks")
+				# 	end
+				# end
 
 	ssh root@162.243.252.62
 	Current directory :  ln -s /var/www/phpmyadmin ./public/phpmyadmin 
