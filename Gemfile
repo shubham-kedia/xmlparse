@@ -35,6 +35,7 @@ gem 'nokogiri'
 
 gem 'devise'
 
+# Use Capistrano for deployment
 gem 'capistrano','2.15.5',group: :development
 
 gem 'rvm-capistrano'
@@ -49,9 +50,6 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
 			# doc = Nokogiri::XML(File.open("/home/sk/Documents/xmltask/category.xml"))
 			@count = 0
 			categories = doc.search("//category")
-			Category.touch
+			
 			categories.each do |category|
 				@c= Category.find_or_initialize_by_category_id_and_provider_name(category.at('id').content,"skimlinks")
 				if @c.name.present? && @c.name !=category.at('name').text
