@@ -15,7 +15,9 @@ class CategoriesController < ApplicationController
 			categories = doc.search("//category")
 			
 			categories.each do |category|
-				@c= Category.find_or_initialize_by_category_id_and_provider_name(category.at('id').content,"skimlinks")
+				# @c= Category.find_or_initialize_by_category_id_and_provider_name(category.at('id').content,"skimlinks")
+				@c= Category.find_or_initialize_by(category_id: category.at('id').content,provider_name:"skimlinks")
+
 				if @c.name.present? && @c.name !=category.at('name').text
 					@count= @count+1
 				end
